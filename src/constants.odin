@@ -1,5 +1,8 @@
 package src
 
+
+import "vendor:raylib"
+
 WINDOW_WIDTH :: 800.0
 WINDOW_HEIGHT :: 600.0
 WINDOW_TITLE :: "Breakout"
@@ -10,3 +13,35 @@ PLAYER_POSITION_Y :: WINDOW_HEIGHT - 100
 
 PLAYER_WIDTH :: 100
 PLAYER_HEIGHT :: 30
+
+BALL_RADIUS :: 30
+BALL_SPEED :: 7.5
+
+
+LEFT_WALL_COLLISION_RECTANGLE :: raylib.Rectangle {
+    -10,
+    0,
+    10,
+    WINDOW_HEIGHT
+}
+
+RIGHT_WALL_COLLISION_RECTANGLE :: raylib.Rectangle {
+    WINDOW_WIDTH,
+    0,
+    10,
+    WINDOW_HEIGHT
+}
+
+TOP_WALL_COLLISION_RECTANGLE :: raylib.Rectangle {
+    0, 
+    -10,
+    WINDOW_WIDTH,
+    10
+}
+
+BOTTOM_WALL_COLLISION_RECTANGLE :: raylib.Rectangle {
+    0,
+    WINDOW_HEIGHT,
+    WINDOW_WIDTH,
+    10
+}
