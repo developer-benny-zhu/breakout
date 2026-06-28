@@ -42,11 +42,6 @@ update_player :: proc(player: ^Player) {
     else if raylib.IsKeyDown(raylib.KeyboardKey.D) {
         player.velocity_x = PLAYER_SPEED
     }
-    if raylib.CheckCollisionRecs(player.collision, LEFT_WALL_COLLISION_RECTANGLE) {
-        return
-    }
-    else if raylib.CheckCollisionRecs(player.collision, RIGHT_WALL_COLLISION_RECTANGLE) {
-        return
-    }
+    player.position_x = clamp(player.position_x, 0, WINDOW_WIDTH - PLAYER_WIDTH)
     player.position_x += player.velocity_x
 }
